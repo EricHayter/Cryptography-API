@@ -1,0 +1,23 @@
+{
+  "name": "Cryptography-API",
+  "version": "1.0.0",
+  "description": "A simple cryptography API where people can ping a server and ask either to send a message and have in encrypted or vise versa",
+  "main": "ciphers.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EricHayter/Cryptography-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EricHayter/Cryptography-API/issues"
+  },
+  "homepage": "https://github.com/EricHayter/Cryptography-API#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
