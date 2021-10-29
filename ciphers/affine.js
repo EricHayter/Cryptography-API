@@ -1,13 +1,6 @@
-// this to fix modulus bug
-function mod(n, m) {
-    return ((n % m) + m) % m;
-}
+const mod_utils = require("./mod_utils")
 
-function modInverse(a, b) {
-    for(let x = 1; x < b; x++)
-        if (mod((mod(a,b) * mod(x,b)), b) == 1)
-            return x;
-}
+const [mod,modInverse] = mod_utils;
 
 function Affine(string, a, b) {
     var newStr = ""
@@ -24,3 +17,5 @@ function reverseAffine(string, a, b) {
     }
     return newStr;
 }
+
+module.exports = [Affine,reverseAffine]
