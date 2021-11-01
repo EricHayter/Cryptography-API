@@ -20,6 +20,8 @@ function reverseCaesar(string,a){
 	return newStr;
 }
 
-console.log(reverseCaesar(caesar("helloworld", 25),25))
+function affineKeyValidator(a) {
+  return !isNaN(a);
+}
 
-module.exports = [caesar]
+module.exports = [caesar,reverseCaesar, affineKeyValidator];
