@@ -7,18 +7,26 @@ const checkInput = require("./input_validator");
 //import affine cipher utilities
 const [affine, reverseAffine, affineKeyValidator] = require("./ciphers/affine");
 
-app.get("/affine/encrypt/:string", (req, res) => {
-  const { a, b } = req.query;
+app.get("/:cipher/:typereq/:string", (req, res) => {
+  switch (req.params.cipher) {
 
-  console.log(req.params.string);
-  console.log(checkInput(req.params.string));
+    //AFFINE
+    case "affine":
+      //encryptions
+      if (req.params.typereq == "encrypt") {
+        //gathering keys
+        const { a, b } = req.query;
 
-  if (checkInput(req.params.string)) {
-    if (affineKeyValidator(a)) {
-      res.send({ text: affine(req.params.string, a, b) });
-    }
-  } else {
-    res.send("Error: invalid characters used in message");
+        if (checkInput(req.params.string)) {
+          if (affineKeyValidator(a,b)) {
+            res.send({ text: affine(req.params.string, a, b), keys: a.concat(" ",b) });
+          } else {
+            res.send("Error: invalid characters used in key(s)");
+          }
+        } else {
+          res.send("Error: invalid characters used in message");
+        }
+      }
   }
 });
 

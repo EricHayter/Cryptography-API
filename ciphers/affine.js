@@ -22,9 +22,15 @@ function reverseAffine(string, a, b) {
   return newStr;
 }
 
-function affineKeyValidator(a) {
-  if (a < 1 & a > -1) {
-    return false
+function affineKeyValidator(a,b) {
+  if ((a < 1) & (a > -1)) {
+    console.log("this is the error")
+    return false;
+  }
+
+  if (isNaN(parseInt(b))) {
+    console.log("this is the error!!!!")
+    return false;
   }
 
   return true;
