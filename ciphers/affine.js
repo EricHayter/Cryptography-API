@@ -3,7 +3,7 @@ const mod_utils = require("./mod_utils");
 const [mod, modInverse] = mod_utils;
 
 function affine(string, a, b) {
-  var newStr = "";
+  let newStr = "";
   for (let i = 0; i < string.length; i++) {
     newStr += String.fromCharCode(
       mod(a * (string.charCodeAt(i) - 97) + b, 26) + 97
