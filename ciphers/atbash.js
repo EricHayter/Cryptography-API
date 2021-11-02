@@ -12,7 +12,4 @@ function atbash(string) {
 // There is no need to make a reverse atbash because you can just decrypt the message by calling 
 // the atbash cipher again.
 
-console.log(atbash(atbash("helloworld")));
-
-
 module.exports = [atbash];
