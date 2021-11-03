@@ -25,5 +25,4 @@ function reverseVigenere(string, a) {
 	return newStr;
 }
 
-
-console.log(reverseVigenere(vigenere("helloworld","password"), "password"))
+module.exports = [vigenere, reverseVigenere];
